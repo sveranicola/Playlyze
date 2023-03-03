@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { UserAuthorization } from '../auth/authorize';
+import { UserAuthorization } from '../requests/authorize';
 
 const Landing: NextPage = () => {
   return (
