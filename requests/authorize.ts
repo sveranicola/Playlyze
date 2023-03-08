@@ -1,4 +1,3 @@
-
 /*
  *  This function is a redirect to spotify to grant an access token
  *  The access type is using spotify's implicit grant flow for limited
@@ -9,7 +8,7 @@ export const UserAuthorization = async () => {
   url += `?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}`;
   url += `&response_type=token`
   url += `&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}`
-  url += `&scope=user-library-read user-read-private user-read-email`
+  url += `&scope=user-library-read user-read-private user-read-email user-library-read user-top-read`
 
   window.location.href = url;
 }
@@ -31,5 +30,9 @@ export const parseToken = (token : string) => {
     })
 
     sessionStorage.setItem('accessToken', JSON.stringify(authTokens));
+
+    return true;
+  } else {
+    return false;
   }
 }

@@ -1,13 +1,25 @@
 import type { NextPage } from 'next';
-import { UserAuthorization } from '../requests/authorize';
+import Login from '../components/login/login';
+import { Box, styled } from '@mui/material'
+
+export const LandingBox = styled(Box)({
+  background: '#FBFBFB',
+  height: '100vh',
+  width: '100%',
+  margin: '0',
+
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
 
 const Landing: NextPage = () => {
   return (
-    <div >
-      <h1>plz login to spotify</h1>
-
-      <button onClick={() => { UserAuthorization()} }> Please do it</button>
-    </div>
+    <LandingBox>
+      <Login />
+    </LandingBox>
   )
 }
 
