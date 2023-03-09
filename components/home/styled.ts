@@ -2,7 +2,7 @@ import { Box, ButtonGroup, Button, Typography, styled } from '@mui/material'
 
 export const HomeViewBox = styled(Box)({
   background: '#FBFBFB',
-  height: '100%',
+  height: '100vh',
   width: '100%',
 
   display: 'flex',
@@ -44,7 +44,6 @@ export const SliderBox = styled(Box)({
   height: '100%',
   width: '100%',
   marginTop: '3vh',
-  border: '1px solid red'
 });
 
 

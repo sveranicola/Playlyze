@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import {HomeViewBox, HeaderBox, LogoBox, TimeSelect, TimeButton, SliderBox } from './styled';
-import {Button} from '@mui/material'
+import Card from '../card/card';
 import { useEffect } from 'react';
 
 interface HomeViewProps {
@@ -31,13 +31,10 @@ const HomeView = ({userTopDataMediumTerm} : HomeViewProps) => {
         {
          userTopDataMediumTerm?.items.map((data: any) => {
           return (
-            <div key={data.id}>
-              {data.name}
-            </div>
+            <Card key={data.id} name={data.name} image={data.images[0].url} popularity={data.popularity} genre={data.genres}/>
           )
          })
         }
-
       </SliderBox>
     </HomeViewBox>
   );
