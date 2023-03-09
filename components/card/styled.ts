@@ -3,7 +3,7 @@ import { Box, Typography, styled } from '@mui/material'
 export const CardBox = styled(Box)({
   height: '50vh',
   width: '25vw',
-  maxWidth: '300px',
+  maxWidth: '330px',
   borderRadius: '15px',
 
   display: 'flex',

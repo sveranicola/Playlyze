@@ -2,13 +2,14 @@
 import {HomeViewBox, HeaderBox, LogoBox, TimeSelect, TimeButton, SliderBox } from './styled';
 import Card from '../card/card';
 import { useEffect } from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 interface HomeViewProps {
   userTopDataMediumTerm: any
 }
 
 const HomeView = ({userTopDataMediumTerm} : HomeViewProps) => {
-
   useEffect(() => {
     if(userTopDataMediumTerm) {
       console.log(userTopDataMediumTerm)
@@ -28,6 +29,15 @@ const HomeView = ({userTopDataMediumTerm} : HomeViewProps) => {
         <TimeButton>4 weeks</TimeButton>
       </TimeSelect>
       <SliderBox>
+        <Carousel
+          centerMode={true}
+          centerSlidePercentage={28}
+          emulateTouch={true}
+          showArrows={true}
+          showStatus={false}
+          useKeyboardArrows={true}
+          showIndicators={false}
+        >
         {
          userTopDataMediumTerm?.items.map((data: any) => {
           return (
@@ -35,6 +45,7 @@ const HomeView = ({userTopDataMediumTerm} : HomeViewProps) => {
           )
          })
         }
+        </Carousel>
       </SliderBox>
     </HomeViewBox>
   );
