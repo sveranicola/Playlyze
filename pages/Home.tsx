@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { useState, useEffect } from 'react';
 import { parseToken } from '../requests/authorize';
-import { getUsersTopItems } from '../requests/users';
+import { getUsersTopItemsAllTerm, getUsersTopItemsMediumTerm, getUsersTopItemsShortTerm } from '../requests/users';
 import { useRouter } from 'next/router';
 import HomeView from '../components/home/homeView';
 import { Box, styled } from '@mui/material';
@@ -22,8 +22,9 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   const [accessTokenExists, setAccessTokenExists] = useState<boolean>()
+  const [userTopDataAllTerm, setUserTopDataAllTerm] = useState();
   const [userTopDataMediumTerm, setUserTopDataMediumTerm] = useState();
-
+  const [userTopDataShortTerm, setUserTopDataShortTerm] = useState();
 
   useEffect(() => {
     if (router.asPath.length > 0) {
@@ -34,15 +35,24 @@ const Home: NextPage = () => {
   }, [router]);
 
   useEffect(() => {
-    getUsersTopItems((data: any) => {setUserTopDataMediumTerm(data)});
+    getUsersTopItemsAllTerm((data: any) => {setUserTopDataAllTerm(data)});
 
   }, [accessTokenExists]);
 
-  // useEffect(() => {console.log(userTopDataMediumTerm)}, [userTopDataMediumTerm])
+  useEffect(() => {
+    getUsersTopItemsMediumTerm((data: any) => {setUserTopDataMediumTerm(data)});
+
+    getUsersTopItemsShortTerm((data: any) => {setUserTopDataShortTerm(data)})
+
+  }, [userTopDataAllTerm]);
 
   return (
     <HomeBox>
-      <HomeView userTopDataMediumTerm={userTopDataMediumTerm}/>
+      <HomeView
+        userTopDataAllTerm={userTopDataAllTerm}
+        userTopDataMediumTerm={userTopDataMediumTerm}
+        userTopDataShortTerm={userTopDataShortTerm}
+      />
     </HomeBox>
   )
 }
