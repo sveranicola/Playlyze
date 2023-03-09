@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Login from '../components/login/login';
 import { Box, styled } from '@mui/material'
 
-export const LandingBox = styled(Box)({
+const LandingBox = styled(Box)({
   background: '#FBFBFB',
   height: '100vh',
   width: '100%',
