@@ -1,8 +1,8 @@
-import { Box, ButtonGroup, Button, Typography, styled } from '@mui/material'
+import { Box, ButtonGroup, Button, Typography, styled } from '@mui/material';
 
 export const HomeViewBox = styled(Box)({
   background: '#FBFBFB',
-  height: '100vh',
+  height: 'fit-content',
   width: '100%',
 
   display: 'flex',
@@ -45,7 +45,3 @@ export const SliderBox = styled(Box)({
   width: '100%',
   marginTop: '3vh',
 });
-
-
-
-

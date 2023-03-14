@@ -1,14 +1,18 @@
 import type { NextPage } from 'next';
 import { useState, useEffect } from 'react';
 import { parseToken } from '../requests/authorize';
-import { getUsersTopItemsAllTerm, getUsersTopItemsMediumTerm, getUsersTopItemsShortTerm } from '../requests/users';
+import {
+  getUsersTopItemsAllTerm,
+  getUsersTopItemsMediumTerm,
+  getUsersTopItemsShortTerm,
+} from '../requests/users';
 import { useRouter } from 'next/router';
 import HomeView from '../components/home/homeView';
 import { Box, styled } from '@mui/material';
 
 const HomeBox = styled(Box)({
   background: '#FBFBFB',
-  height: '100vh',
+  height: 'fit-content',
   width: '100%',
   margin: '0px',
 
@@ -21,7 +25,7 @@ const HomeBox = styled(Box)({
 const Home: NextPage = () => {
   const router = useRouter();
 
-  const [accessTokenExists, setAccessTokenExists] = useState<boolean>()
+  const [accessTokenExists, setAccessTokenExists] = useState<boolean>();
   const [userTopDataAllTerm, setUserTopDataAllTerm] = useState();
   const [userTopDataMediumTerm, setUserTopDataMediumTerm] = useState();
   const [userTopDataShortTerm, setUserTopDataShortTerm] = useState();
@@ -35,15 +39,19 @@ const Home: NextPage = () => {
   }, [router]);
 
   useEffect(() => {
-    getUsersTopItemsAllTerm((data: any) => {setUserTopDataAllTerm(data)});
-
+    getUsersTopItemsAllTerm((data: any) => {
+      setUserTopDataAllTerm(data);
+    });
   }, [accessTokenExists]);
 
   useEffect(() => {
-    getUsersTopItemsMediumTerm((data: any) => {setUserTopDataMediumTerm(data)});
+    getUsersTopItemsMediumTerm((data: any) => {
+      setUserTopDataMediumTerm(data);
+    });
 
-    getUsersTopItemsShortTerm((data: any) => {setUserTopDataShortTerm(data)})
-
+    getUsersTopItemsShortTerm((data: any) => {
+      setUserTopDataShortTerm(data);
+    });
   }, [userTopDataAllTerm]);
 
   return (
@@ -54,7 +62,7 @@ const Home: NextPage = () => {
         userTopDataShortTerm={userTopDataShortTerm}
       />
     </HomeBox>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

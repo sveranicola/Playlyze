@@ -1,4 +1,4 @@
-import { Box, Button, Typography, styled } from '@mui/material'
+import { Box, Button, Typography, styled } from '@mui/material';
 
 export const LoginOuterBox = styled(Box)({
   width: '60%',

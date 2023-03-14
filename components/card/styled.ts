@@ -1,4 +1,4 @@
-import { Box, Typography, styled } from '@mui/material'
+import { Box, Typography, styled } from '@mui/material';
 
 export const CardBox = styled(Box)({
   height: '50vh',
@@ -32,8 +32,5 @@ export const ArtistDetails = styled(Typography)({
   marginTop: '.2vw',
   mrginBottom: '.2vw',
   fontSize: '1.7vh',
-  padding: '0 .5vw 0 .5vw'
+  padding: '0 .5vw 0 .5vw',
 });
-
-
-
