@@ -32,14 +32,15 @@ const Home: NextPage = () => {
     if (router.asPath.length > 0) {
       const parsedToken = parseToken(router.asPath);
       setAccessTokenExists(parsedToken);
-      router.replace('/Home');
     }
   }, [router]);
 
   useEffect(() => {
+    router.replace('/Home');
     getUsersTopItemsAllTerm((data: any) => {
       setUserTopDataAllTerm(data);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [accessTokenExists]);
 
   useEffect(() => {
