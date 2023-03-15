@@ -5,7 +5,7 @@ export const CardBox = styled(Box)({
   width: '25vw',
   maxWidth: '330px',
   borderRadius: '15px',
-
+  marginBottom: '2vh',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

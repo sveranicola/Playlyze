@@ -76,8 +76,8 @@ const HomeView = ({
           4 weeks
         </TimeButton>
       </TimeSelect>
-      {/* <SliderBox> */}
-      {/* <Carousel
+      <SliderBox>
+        {/* <Carousel
           centerMode={true}
           centerSlidePercentage={28}
           emulateTouch={true}
@@ -95,24 +95,24 @@ const HomeView = ({
         }
         </Carousel> */}
 
-      <Grid container spacing={3} sx={{ border: '1px solid red' }}>
-        {
-          //@ts-ignore
-          currentData?.items.map((data: any) => {
-            return (
-              <Grid xs={3} key={data.id}>
-                <Card
-                  name={data.name}
-                  image={data.images[0].url}
-                  popularity={data.popularity}
-                  genre={data.genres}
-                />
-              </Grid>
-            );
-          })
-        }
-      </Grid>
-      {/* </SliderBox> */}
+        <Grid container>
+          {
+            //@ts-ignore
+            currentData?.items.map((data: any) => {
+              return (
+                <Grid xs={3} key={data.id}>
+                  <Card
+                    name={data.name}
+                    image={data.images[0].url}
+                    popularity={data.popularity}
+                    genre={data.genres}
+                  />
+                </Grid>
+              );
+            })
+          }
+        </Grid>
+      </SliderBox>
     </HomeViewBox>
   );
 };
