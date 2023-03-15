@@ -2,7 +2,6 @@ import { Box, ButtonGroup, Button, Typography, styled } from '@mui/material';
 
 export const HomeViewBox = styled(Box)({
   background: '#FBFBFB',
-  height: 'fit-content',
   width: '100%',
 
   display: 'flex',

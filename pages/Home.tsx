@@ -12,9 +12,7 @@ import { Box, styled } from '@mui/material';
 
 const HomeBox = styled(Box)({
   background: '#FBFBFB',
-  height: 'fit-content',
   width: '100%',
-  margin: '0px',
 
   display: 'flex',
   flexDirection: 'column',
