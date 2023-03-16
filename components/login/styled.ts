@@ -1,9 +1,9 @@
 import { Box, Button, Typography, styled } from '@mui/material';
 
 export const LoginOuterBox = styled(Box)({
-  width: '60%',
-  maxWidth: '1000px',
-  minHeight: '90vh',
+  height: '90%',
+  width: '70%',
+  maxWidth: '900px',
   background: '#FBFBFB',
   boxShadow: '0px 8px 30px 10px rgba(0, 0, 0, 0.25)',
 
@@ -11,18 +11,12 @@ export const LoginOuterBox = styled(Box)({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  textAlign: 'center',
 });
 
 export const LoginImageBox = styled(Box)({
-  height: '15vh',
+  height: '20%',
   width: '60%',
-});
-
-export const LoginSubText = styled(Typography)({
-  color: '#7D82B8',
-  fontFamily: 'Helvetica',
-  fontWeight: 'regular',
-  fontSize: '2.5vh',
 });
 
 export const SpotifyButton = styled(Button)({
@@ -31,15 +25,23 @@ export const SpotifyButton = styled(Button)({
   marginTop: '8vh',
   marginBottom: '2vh',
   height: '5vh',
-  width: '48%',
+  width: '60%',
   borderRadius: '50px',
 });
 
 export const SpotifyButtonTypography = styled(Typography)({
   color: 'white',
   fontFamily: 'Helvetica',
+  fontWeight: 'bold',
+  fontSize: '1.5vh',
+});
+
+export const LoginSubText = styled(Typography)({
+  color: '#7D82B8',
+  fontFamily: 'Helvetica',
   fontWeight: 'regular',
-  fontSize: '2.5vh',
+  fontSize: '1.7vh',
+  width: '80%',
 });
 
 export const LoginInfoText = styled(Typography)({
