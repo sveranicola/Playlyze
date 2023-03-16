@@ -59,8 +59,8 @@ const HomeView = ({
             setTerm('all_time');
           }}
           sx={{
-            backgroundColor: term === 'all_time' ? '#7D82B8' : 'none',
-            color: term === 'all_time' ? '#FBFBFB' : 'none',
+            backgroundColor: term === 'all_time' ? '#7D82B8' : '#FBFBFB',
+            color: term === 'all_time' ? '#FBFBFB' : '#7D82B8',
           }}
         >
           all time
@@ -70,8 +70,8 @@ const HomeView = ({
             setTerm('6_months');
           }}
           sx={{
-            backgroundColor: term === '6_months' ? '#7D82B8' : 'none',
-            color: term === '6_months' ? '#FBFBFB' : 'none',
+            backgroundColor: term === '6_months' ? '#7D82B8' : '#FBFBFB',
+            color: term === '6_months' ? '#FBFBFB' : '#7D82B8',
           }}
         >
           6 months
@@ -81,8 +81,8 @@ const HomeView = ({
             setTerm('4_months');
           }}
           sx={{
-            backgroundColor: term === '4_months' ? '#7D82B8' : 'none',
-            color: term === '4_months' ? '#FBFBFB' : 'none',
+            backgroundColor: term === '4_months' ? '#7D82B8' : '#FBFBFB',
+            color: term === '4_months' ? '#FBFBFB' : '#7D82B8',
           }}
         >
           4 weeks
