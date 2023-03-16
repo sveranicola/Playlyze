@@ -47,7 +47,6 @@ const Card = ({ name, image, popularity, genre }: CardProps) => {
             height: '100%',
             width: '100%',
             borderRadius: '15px',
-            maxWidth: '280px',
           }}
         />
       </CardImageBox>

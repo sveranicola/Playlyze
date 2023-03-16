@@ -10,14 +10,14 @@ export const HomeViewBox = styled(Box)({
 });
 
 export const HeaderBox = styled(Box)({
-  background: '#FBFBFB',
-  height: '13vh',
-  width: '100%',
-  minHeight: '150px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+
+  background: '#FBFBFB',
+  height: '13vh',
+  width: '100%',
 });
 
 export const LogoBox = styled(Box)({
@@ -36,7 +36,8 @@ export const TimeButton = styled(Button)({
   color: '#7D82B8',
   borderColor: '#7D82B8',
   height: '4.5vh',
-  width: '15vw',
+  width: 'fit-content',
+  fontSize: '1.5vh',
 });
 
 export const SliderBox = styled(Box)({

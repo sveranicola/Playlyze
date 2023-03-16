@@ -77,30 +77,12 @@ const HomeView = ({
         </TimeButton>
       </TimeSelect>
       <SliderBox>
-        {/* <Carousel
-          centerMode={true}
-          centerSlidePercentage={28}
-          emulateTouch={true}
-          showArrows={true}
-          showStatus={false}
-          useKeyboardArrows={true}
-          showIndicators={false}
-        >
-        {
-         currentData?.items.map((data: any) => {
-          return (
-            <Card key={data.id} name={data.name} image={data.images[0].url} popularity={data.popularity} genre={data.genres}/>
-          )
-         })
-        }
-        </Carousel> */}
-
         <Grid container>
           {
             //@ts-ignore
             currentData?.items.map((data: any) => {
               return (
-                <Grid xs={3} key={data.id}>
+                <Grid xs={6} sm={4} md={3} lg={3} xl={2} key={data.id}>
                   <Card
                     name={data.name}
                     image={data.images[0].url}
