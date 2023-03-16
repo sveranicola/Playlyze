@@ -58,6 +58,10 @@ const HomeView = ({
           onClick={() => {
             setTerm('all_time');
           }}
+          sx={{
+            backgroundColor: term === 'all_time' ? '#7D82B8' : 'none',
+            color: term === 'all_time' ? '#FBFBFB' : 'none',
+          }}
         >
           all time
         </TimeButton>
@@ -65,12 +69,20 @@ const HomeView = ({
           onClick={() => {
             setTerm('6_months');
           }}
+          sx={{
+            backgroundColor: term === '6_months' ? '#7D82B8' : 'none',
+            color: term === '6_months' ? '#FBFBFB' : 'none',
+          }}
         >
           6 months
         </TimeButton>
         <TimeButton
           onClick={() => {
             setTerm('4_months');
+          }}
+          sx={{
+            backgroundColor: term === '4_months' ? '#7D82B8' : 'none',
+            color: term === '4_months' ? '#FBFBFB' : 'none',
           }}
         >
           4 weeks
