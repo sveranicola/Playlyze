@@ -10,8 +10,6 @@ import {
 } from './styled';
 import Card from '../card/card';
 import { useEffect, useState } from 'react';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import { Grid } from '@mui/material';
 
 interface HomeViewProps {
@@ -47,7 +45,7 @@ const HomeView = ({
       <HeaderBox>
         <LogoBox>
           <img
-            src='/playlyze-low-resolution-logo-color-on-transparent-background.png'
+            src='https://i.imgur.com/cm3Bn0p.png'
             alt='logo'
             style={{ height: '100%', width: '100%' }}
           />
@@ -94,7 +92,7 @@ const HomeView = ({
             //@ts-ignore
             currentData?.items.map((data: any) => {
               return (
-                <Grid xs={6} sm={4} md={3} lg={3} xl={2} key={data.id}>
+                <Grid item xs={6} sm={4} md={3} lg={3} xl={2} key={data.id}>
                   <Card
                     name={data.name}
                     image={data.images[0].url}

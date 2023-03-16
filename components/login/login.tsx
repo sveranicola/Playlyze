@@ -14,7 +14,7 @@ const Login = () => {
     <LoginOuterBox>
       <LoginImageBox>
         <img
-          src='/playlyze-low-resolution-logo-color-on-transparent-background.png'
+          src='https://i.imgur.com/cm3Bn0p.png'
           alt='logo'
           style={{ height: '100%', width: '100%' }}
         />
