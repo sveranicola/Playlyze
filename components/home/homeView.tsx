@@ -4,18 +4,19 @@ import {
   HomeViewBox,
   HeaderBox,
   LogoBox,
-  TimeSelect,
-  TimeButton,
-  SliderBox,
+  ButtonCluster,
+  CustomButton,
+  GridBox,
 } from './styled';
 import Card from '../card/card';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Grid } from '@mui/material';
+import { topArtist } from '../../types/data';
 
 interface HomeViewProps {
-  userTopDataAllTerm: any;
-  userTopDataMediumTerm: any;
-  userTopDataShortTerm: any;
+  userTopDataAllTerm: topArtist;
+  userTopDataMediumTerm: topArtist;
+  userTopDataShortTerm: topArtist;
 }
 
 const HomeView = ({
@@ -24,21 +25,38 @@ const HomeView = ({
   userTopDataShortTerm,
 }: HomeViewProps) => {
   const [term, setTerm] = useState<string>('all_time');
-  const [currentData, setCurrentData] = useState();
+  const [sortBy, setSortBy] = useState<string>('none');
 
-  useEffect(() => {
-    setCurrentData(userTopDataAllTerm);
-  }, [userTopDataAllTerm]);
-
-  useEffect(() => {
+  const dataSelect = () => {
     if (term === 'all_time') {
-      setCurrentData(userTopDataAllTerm);
+      return userTopDataAllTerm.items;
     } else if (term === '6_months') {
-      setCurrentData(userTopDataMediumTerm);
+      return userTopDataMediumTerm.items;
     } else {
-      setCurrentData(userTopDataShortTerm);
+      return userTopDataShortTerm.items;
     }
-  }, [term]);
+  };
+
+  let currentData = dataSelect();
+
+  const tempCurrentData = [...currentData];
+
+  const filteredData =
+    sortBy !== 'none'
+      ? tempCurrentData.sort((a, b) => {
+          if (sortBy === 'low_high') {
+            if (a.popularity > b.popularity) return 1;
+            if (b.popularity > a.popularity) return -1;
+            return 0;
+          } else if (sortBy === 'high_low') {
+            if (a.popularity < b.popularity) return 1;
+            if (b.popularity < a.popularity) return -1;
+            return 0;
+          }
+
+          return 0;
+        })
+      : currentData;
 
   return (
     <HomeViewBox>
@@ -51,8 +69,8 @@ const HomeView = ({
           />
         </LogoBox>
       </HeaderBox>
-      <TimeSelect>
-        <TimeButton
+      <ButtonCluster>
+        <CustomButton
           onClick={() => {
             setTerm('all_time');
           }}
@@ -62,8 +80,8 @@ const HomeView = ({
           }}
         >
           all time
-        </TimeButton>
-        <TimeButton
+        </CustomButton>
+        <CustomButton
           onClick={() => {
             setTerm('6_months');
           }}
@@ -73,8 +91,8 @@ const HomeView = ({
           }}
         >
           6 months
-        </TimeButton>
-        <TimeButton
+        </CustomButton>
+        <CustomButton
           onClick={() => {
             setTerm('4_months');
           }}
@@ -84,27 +102,59 @@ const HomeView = ({
           }}
         >
           4 weeks
-        </TimeButton>
-      </TimeSelect>
-      <SliderBox>
+        </CustomButton>
+      </ButtonCluster>
+      <ButtonCluster>
+        <CustomButton
+          onClick={() => {
+            setSortBy('none');
+          }}
+          sx={{
+            backgroundColor: sortBy === 'none' ? '#7D82B8' : '#FBFBFB',
+            color: sortBy === 'none' ? '#FBFBFB' : '#7D82B8',
+          }}
+        >
+          None
+        </CustomButton>
+        <CustomButton
+          onClick={() => {
+            setSortBy('low_high');
+          }}
+          sx={{
+            backgroundColor: sortBy === 'low_high' ? '#7D82B8' : '#FBFBFB',
+            color: sortBy === 'low_high' ? '#FBFBFB' : '#7D82B8',
+          }}
+        >
+          Lowest to Highest
+        </CustomButton>
+        <CustomButton
+          onClick={() => {
+            setSortBy('high_low');
+          }}
+          sx={{
+            backgroundColor: sortBy === 'high_low' ? '#7D82B8' : '#FBFBFB',
+            color: sortBy === 'high_low' ? '#FBFBFB' : '#7D82B8',
+          }}
+        >
+          Highest to Lowest
+        </CustomButton>
+      </ButtonCluster>
+      <GridBox>
         <Grid container>
-          {
-            //@ts-ignore
-            currentData?.items.map((data: any) => {
-              return (
-                <Grid item xs={6} sm={4} md={3} lg={3} xl={2} key={data.id}>
-                  <Card
-                    name={data.name}
-                    image={data.images[0].url}
-                    popularity={data.popularity}
-                    genre={data.genres}
-                  />
-                </Grid>
-              );
-            })
-          }
+          {filteredData?.map((data: any) => {
+            return (
+              <Grid item xs={6} sm={4} md={3} lg={3} xl={2} key={data.id}>
+                <Card
+                  name={data.name}
+                  image={data.images[0].url}
+                  popularity={data.popularity}
+                  genre={data.genres}
+                />
+              </Grid>
+            );
+          })}
         </Grid>
-      </SliderBox>
+      </GridBox>
     </HomeViewBox>
   );
 };

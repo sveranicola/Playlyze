@@ -26,13 +26,13 @@ export const LogoBox = styled(Box)({
   width: '30%',
 });
 
-export const TimeSelect = styled(ButtonGroup)({
+export const ButtonCluster = styled(ButtonGroup)({
   varient: 'outlined',
   marginTop: '3vh',
   maxWidth: '800px',
 });
 
-export const TimeButton = styled(Button)({
+export const CustomButton = styled(Button)({
   color: '#7D82B8',
   borderColor: '#7D82B8',
   height: '4.5vh',
@@ -40,7 +40,7 @@ export const TimeButton = styled(Button)({
   fontSize: '1.5vh',
 });
 
-export const SliderBox = styled(Box)({
+export const GridBox = styled(Box)({
   height: '100%',
   width: '100%',
   marginTop: '3vh',

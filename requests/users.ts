@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-export const getUsersTopItemsMediumTerm = (cb: any) => {
+export const getUsersTopItemsAllTerm = (cb: any) => {
   const accessToken = JSON.parse(
     window.sessionStorage.getItem('accessToken') || ''
   );
 
   axios
     .get(
-      'https://api.spotify.com/v1/me/top/artists?limit=50&time_range=medium_term',
+      'https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term',
       {
         headers: {
           Authorization: 'Bearer ' + accessToken.access_token,
@@ -21,14 +21,14 @@ export const getUsersTopItemsMediumTerm = (cb: any) => {
     .catch((err) => console.log(err));
 };
 
-export const getUsersTopItemsAllTerm = (cb: any) => {
+export const getUsersTopItemsMediumTerm = (cb: any) => {
   const accessToken = JSON.parse(
     window.sessionStorage.getItem('accessToken') || ''
   );
 
   axios
     .get(
-      'https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term',
+      'https://api.spotify.com/v1/me/top/artists?limit=50&time_range=medium_term',
       {
         headers: {
           Authorization: 'Bearer ' + accessToken.access_token,
