@@ -19,18 +19,32 @@ const Card = ({ name, image, popularity, genre }: CardProps) => {
     }
   });
 
-  const findRarityBGColor = (popularity: number) => {
-    if (60 <= popularity) {
-      return '#E8EEF2';
+  const findPopularity = (popularity: number) => {
+    if (90 <= popularity) {
+      return 'very popular';
+    } else if (60 <= popularity && popularity <= 89) {
+      return 'popular';
     } else if (16 <= popularity && popularity <= 59) {
-      return '#7D82B8';
+      return 'under ground';
     } else {
+      return 'so under ground are you sure about this?';
+    }
+  };
+
+  const findRarityBGColor = (popularity: number) => {
+    if (90 <= popularity) {
+      return '#E8EEF2';
+    } else if (60 <= popularity && popularity <= 89) {
+      return '#7D82B8';
+    } else if (16 <= popularity && popularity <= 59) {
       return '#390099';
+    } else {
+      return '#050401';
     }
   };
 
   const findRarityFontColor = (popularity: number) => {
-    if (60 <= popularity) {
+    if (90 <= popularity) {
       return '#050401';
     } else {
       return '#FBFBFB';
@@ -57,7 +71,7 @@ const Card = ({ name, image, popularity, genre }: CardProps) => {
         Genres : {genres}
       </ArtistDetails>
       <ArtistDetails sx={{ color: findRarityFontColor(popularity) }}>
-        popularity : {popularity}
+        {findPopularity(popularity)}
       </ArtistDetails>
     </CardBox>
   );
