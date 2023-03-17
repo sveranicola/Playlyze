@@ -13,7 +13,6 @@ import { Box, styled } from '@mui/material';
 const HomeBox = styled(Box)({
   background: '#FBFBFB',
   width: '100%',
-  // maxWidth: '1700px',
   alignContent: 'center',
 
   display: 'flex',
