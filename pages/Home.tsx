@@ -23,7 +23,6 @@ const HomeBox = styled(Box)({
 
 const SpinnerContainer = styled(Box)({
   height: '100vh',
-
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

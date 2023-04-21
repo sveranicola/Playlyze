@@ -24,12 +24,22 @@ export const LogoBox = styled(Box)({
   height: '70%',
   maxWidth: '350px',
   width: '30%',
+
+  '@media (max-width: 500px)': {
+    height: null,
+    maxWidth: null,
+    width: '65%',
+  },
 });
 
 export const ButtonCluster = styled(ButtonGroup)({
   varient: 'outlined',
   marginTop: '3vh',
   maxWidth: '800px',
+
+  '@media (max-width: 500px)': {
+    marginTop: '1vh',
+  },
 });
 
 export const CustomButton = styled(Button)({
@@ -38,10 +48,20 @@ export const CustomButton = styled(Button)({
   height: '4.5vh',
   width: 'fit-content',
   fontSize: '1.5vh',
+
+  '@media (max-width: 500px)': {
+    height: '4.5vh',
+    width: 'fit-content',
+    fontSize: '1.4vh',
+  },
 });
 
 export const GridBox = styled(Box)({
   height: '100%',
   width: '100%',
   marginTop: '3vh',
+
+  '@media (max-width: 500px)': {
+    marginTop: '1.5vh',
+  },
 });
