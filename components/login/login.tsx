@@ -31,10 +31,10 @@ const Login = () => {
         Welcome please login to Spotify to view your deck!
       </LoginSubText>
       <LoginInfoText>
-        This is a small side project created to use the Spotify API to create a
-        deck of cards based on your top artist and give them a rarity based on
-        the artist popularity. There is no information saved by this app once
-        the permission from Spotify runs out of time you must sign in again.
+        This is a side project created to use the Spotify API to create a deck
+        of cards based on your top artist and give them a rarity based on the
+        artist popularity. There is no information saved by this app once the
+        permission from Spotify runs out of time you must sign in again.
       </LoginInfoText>
     </LoginOuterBox>
   );
