@@ -16,7 +16,7 @@ const Login = () => {
         <img
           src='https://i.imgur.com/cm3Bn0p.png'
           alt='logo'
-          style={{ height: '100%', width: '100%' }}
+          style={{ width: '100%' }}
         />
       </LoginImageBox>
       <LoginSubText>lets see your hand</LoginSubText>

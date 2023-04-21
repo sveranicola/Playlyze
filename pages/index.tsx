@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Login from '../components/login/login';
-import { Box, styled } from '@mui/material'
+import { Box, styled } from '@mui/material';
 
 const LandingBox = styled(Box)({
   background: '#FBFBFB',
-  height: '100vh',
+  height: '100%',
   width: '100%',
   margin: '0',
 
@@ -14,13 +14,12 @@ const LandingBox = styled(Box)({
   alignItems: 'center',
 });
 
-
 const Landing: NextPage = () => {
   return (
     <LandingBox>
       <Login />
     </LandingBox>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;

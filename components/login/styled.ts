@@ -1,7 +1,7 @@
 import { Box, Button, Typography, styled } from '@mui/material';
 
 export const LoginOuterBox = styled(Box)({
-  height: '100%',
+  height: '98vh',
   width: '100%',
   maxWidth: '900px',
   background: '#FBFBFB',
@@ -17,6 +17,13 @@ export const LoginOuterBox = styled(Box)({
 export const LoginImageBox = styled(Box)({
   height: '13%',
   width: '55%',
+  marginBottom: '2vh',
+
+  '@media (max-width: 500px)': {
+    width: '70%',
+    height: 'fit-content',
+    marginBottom: '0vh',
+  },
 });
 
 export const SpotifyButton = styled(Button)({
