@@ -8,7 +8,7 @@ export const UserAuthorization = async () => {
   url += `?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}`;
   url += `&response_type=token`;
   url += `&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}`;
-  url += `&scope=user-library-read user-read-private user-read-email user-library-read user-top-read`;
+  url += `&scope=user-top-read`;
 
   window.location.href = url;
 };
