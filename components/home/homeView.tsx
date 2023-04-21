@@ -149,6 +149,7 @@ const HomeView = ({
                   image={data.images[0].url}
                   popularity={data.popularity}
                   genre={data.genres}
+                  externalUrl={data['external_urls'].spotify}
                 />
               </Grid>
             );

@@ -1,14 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
-import { CardBox, CardImageBox, ArtistName, ArtistDetails } from './styled';
-
+import {
+  CardBox,
+  CardImageBox,
+  ArtistName,
+  ArtistDetails,
+  SpotifyLogoBox,
+} from './styled';
+import { SpotifyLogo } from '../../public/spotifyLogo';
 interface CardProps {
   name: string;
   image: string;
   popularity: number;
   genre: any;
+  externalUrl: string;
 }
 
-const Card = ({ name, image, popularity, genre }: CardProps) => {
+const Card = ({ name, image, popularity, genre, externalUrl }: CardProps) => {
   let genres = '';
 
   genre.forEach((type: string, index: number) => {
@@ -51,6 +58,10 @@ const Card = ({ name, image, popularity, genre }: CardProps) => {
     }
   };
 
+  const linkToSpotifyArtist = () => {
+    window.open(externalUrl, '_blank');
+  };
+
   return (
     <CardBox sx={{ backgroundColor: findRarityBGColor(popularity) }}>
       <CardImageBox>
@@ -59,8 +70,8 @@ const Card = ({ name, image, popularity, genre }: CardProps) => {
           alt='ArtistPicture'
           style={{
             height: '100%',
-            borderRadius: '15px',
-            objectFit: 'scale-down',
+            width: '100%',
+            aspectRatio: '3/4',
           }}
         />
       </CardImageBox>
@@ -73,6 +84,13 @@ const Card = ({ name, image, popularity, genre }: CardProps) => {
       <ArtistDetails sx={{ color: findRarityFontColor(popularity) }}>
         {findPopularity(popularity)}
       </ArtistDetails>
+      <SpotifyLogoBox
+        onClick={() => {
+          linkToSpotifyArtist();
+        }}
+      >
+        <SpotifyLogo />
+      </SpotifyLogoBox>
     </CardBox>
   );
 };
