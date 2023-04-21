@@ -59,8 +59,8 @@ const Card = ({ name, image, popularity, genre }: CardProps) => {
           alt='ArtistPicture'
           style={{
             height: '100%',
-            width: '100%',
             borderRadius: '15px',
+            objectFit: 'scale-down',
           }}
         />
       </CardImageBox>
