@@ -34,6 +34,14 @@ export const SpotifyButton = styled(Button)({
   height: '5vh',
   width: '60%',
   borderRadius: '50px',
+
+  '@media (max-width: 500px)': {
+    marginTop: '5vh',
+    marginBottom: '2vh',
+    height: '6vh',
+    width: '65%',
+    borderRadius: '50px',
+  },
 });
 
 export const SpotifyButtonTypography = styled(Typography)({
@@ -41,6 +49,11 @@ export const SpotifyButtonTypography = styled(Typography)({
   fontFamily: 'Helvetica',
   fontWeight: 'bold',
   fontSize: '1.5vh',
+
+  '@media (max-width: 500px)': {
+    fontWeight: 'bold',
+    fontSize: '1.7vh',
+  },
 });
 
 export const LoginSubText = styled(Typography)({
@@ -49,14 +62,25 @@ export const LoginSubText = styled(Typography)({
   fontWeight: 'regular',
   fontSize: '1.7vh',
   width: '80%',
+
+  '@media (max-width: 500px)': {
+    fontSize: '1.8vh',
+    width: '80%',
+  },
 });
 
 export const LoginInfoText = styled(Typography)({
   color: '#7D82B8',
   fontFamily: 'Helvetica',
   fontWeight: 'regular',
+  textAlign: 'center',
   fontSize: '1.5vh',
   marginTop: '1vh',
   width: '66%',
-  textAlign: 'center',
+
+  '@media (max-width: 500px)': {
+    fontSize: '1.5vh',
+    marginTop: '1vh',
+    width: '67%',
+  },
 });

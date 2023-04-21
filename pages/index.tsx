@@ -10,8 +10,9 @@ const LandingBox = styled(Box)({
 
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
+  justifyContent: 'space-evenly',
   alignItems: 'center',
+  overflow: 'hidden',
 });
 
 const Landing: NextPage = () => {
