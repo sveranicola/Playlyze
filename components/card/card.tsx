@@ -15,15 +15,22 @@ interface CardProps {
 }
 
 const Card = ({ name, image, popularity, genre, externalUrl }: CardProps) => {
-  let genres = '';
+  const grenreSelcetor = (genre: any) => {
+    console.log(genre);
+    let genres = '';
 
-  genre.forEach((type: string, index: number) => {
-    if (index === genre.length - 1) {
-      genres += type;
-    } else {
-      genres += type + ', ';
+    for (let x = 0; x < 3; x++) {
+      if (genre[x] !== undefined) {
+        if (x === genre.length - 1 || x === 2) {
+          genres += genre[x];
+        } else {
+          genres += genre[x] + ', ';
+        }
+      }
     }
-  });
+
+    return genres;
+  };
 
   const findPopularity = (popularity: number) => {
     if (90 <= popularity) {
@@ -70,7 +77,7 @@ const Card = ({ name, image, popularity, genre, externalUrl }: CardProps) => {
           style={{
             height: '100%',
             width: '100%',
-            aspectRatio: '3/4',
+            aspectRatio: '1',
           }}
         />
       </CardImageBox>
@@ -78,7 +85,7 @@ const Card = ({ name, image, popularity, genre, externalUrl }: CardProps) => {
         {name}
       </ArtistName>
       <ArtistDetails sx={{ color: findRarityFontColor(popularity) }}>
-        Genres : {genres}
+        Genres : {grenreSelcetor(genre)}
       </ArtistDetails>
       <ArtistDetails sx={{ color: findRarityFontColor(popularity) }}>
         {findPopularity(popularity)}
