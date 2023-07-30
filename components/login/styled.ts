@@ -15,7 +15,7 @@ export const LoginOuterBox = styled(Box)({
 });
 
 export const LoginImageBox = styled(Box)({
-  height: '13%',
+  height: '15%',
   width: '55%',
   marginBottom: '2vh',
 

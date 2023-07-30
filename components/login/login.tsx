@@ -8,6 +8,7 @@ import {
   LoginInfoText,
 } from './styled';
 import { UserAuthorization } from '../../requests/authorize';
+import { Box } from '@mui/material';
 
 const Login = () => {
   return (
@@ -16,7 +17,7 @@ const Login = () => {
         <img
           src='https://i.imgur.com/cm3Bn0p.png'
           alt='logo'
-          style={{ width: '100%' }}
+          style={{ width: '100%', height: '100%' }}
         />
       </LoginImageBox>
       <LoginSubText>lets see your hand</LoginSubText>
