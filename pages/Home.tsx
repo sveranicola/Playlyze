@@ -28,14 +28,48 @@ const SpinnerContainer = styled(Box)({
   justifyContent: 'center',
 });
 
-const LogoutBox = styled(Box)({
+const BottomTextBox = styled(Box)({
+  background: '#FBFBFB',
   width: '100%',
   height: '10vh',
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'row',
+  justifyContent: 'center',
   alignItems: 'center',
   alignContent: 'center',
   textAlign: 'center',
+});
+
+const LogoutBox = styled(Box)({
+  background: '#FBFBFB',
+  width: '80%',
+  height: '10vh',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  alignContent: 'center',
+  textAlign: 'center',
+});
+
+const ShamelessPlugBox = styled(Box)({
+  background: '#FBFBFB',
+  width: '20%',
+  height: '10vh',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  alignContent: 'center',
+  textAlign: 'center',
+  boxShadow: '0px 5px 25px 7px rgba(129, 129, 129, 0.25)',
+});
+
+const BottomTypography = styled(Typography)({
+  color: '#7D82B8',
+  fontWeight: 'normal',
+  fontSize: '2.5vh',
+  cursor: 'pointer',
 });
 
 const Home: NextPage = () => {
@@ -80,6 +114,10 @@ const Home: NextPage = () => {
     sessionStorage.removeItem('access_token');
   };
 
+  const handleLink = () => {
+    return window.open('https://www.linkedin.com/in/santiago-v-n/', '_blank');
+  };
+
   return (
     <HomeBox>
       {userTopDataAllTerm && userTopDataMediumTerm && userTopDataShortTerm ? (
@@ -93,17 +131,22 @@ const Home: NextPage = () => {
           <CircularProgress sx={{ color: '#7D82B8' }} size='15vh' />
         </SpinnerContainer>
       )}
-      <LogoutBox
-        onClick={() => {
-          handleLogout();
-        }}
-      >
-        <Typography
-          sx={{ color: '#7D82B8', fontWeight: 'normal', fontSize: '3vh' }}
+      <BottomTextBox>
+        <LogoutBox
+          onClick={() => {
+            handleLogout();
+          }}
         >
-          Logout
-        </Typography>
-      </LogoutBox>
+          <BottomTypography>Logout</BottomTypography>
+        </LogoutBox>
+        <ShamelessPlugBox
+          onClick={() => {
+            handleLink();
+          }}
+        >
+          <BottomTypography>Creator</BottomTypography>
+        </ShamelessPlugBox>
+      </BottomTextBox>
     </HomeBox>
   );
 };
