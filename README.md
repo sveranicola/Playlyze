@@ -12,6 +12,14 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+When logged in and loaded the page should populate the top 50 artist of the logged in user as such:
+![Playlyze home](https://github.com/sveranicola/Playlyze/assets/83737256/8dbe7429-0b52-49ff-8c09-b6ae2deed30a)
+
+The bottom of the page should conatain a log out button:
+![Playlyze bottom page](https://github.com/sveranicola/Playlyze/assets/83737256/c7c7e24d-70ae-4557-923c-81846dcef71a)
+
+
+
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
